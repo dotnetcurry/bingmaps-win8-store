@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="BingMapsWindowStoreApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BingMapsWindowStoreApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bm="using:Bing.Maps"
+    mc:Ignorable="d"
+     Loaded="Page_Loaded_1">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="1115*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Width="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="Latidude" Grid.Row="0" Grid.Column="0" Width="100"></TextBlock>
+            <TextBlock Text="Longitude" Grid.Row="1" Grid.Column="0" Width="100"></TextBlock>
+
+            <TextBox x:Name="txtlatitude" Grid.Row="0" Grid.Column="1" Width="100"></TextBox>
+
+            <TextBox x:Name="txtlongitude" Grid.Row="1" Grid.Column="1" Width="100"></TextBox>
+            
+            <Button x:Name="btnlocateme" Content="Locate Me" Click="btnlocateme_Click_1"
+                     Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ></Button>
+        </Grid>
+
+        <bm:Map x:Name="myMap" Credentials="Replace_with_your_Bing_Maps_Key"
+                 Grid.Column="1"></bm:Map>
+        
+    </Grid>
+</Page>
